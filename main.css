@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'raleway';
+  src: url('raleway_thin-webfont.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(
+    #111,
+    #222,
+    #9f00a5
+  );
+  background-attachment: fixed;
+}
+
+section {
+  background-color: rgba(1, 1, 1, 0.55);
+  width: 48%;
+  margin-top: 5vh;
+  position: absolute;
+  z-index: 2;
+}
+
+section:first-child {
+  position: fixed;
+}
+
+section.article {
+  right: 0;
+}
+
+section article {
+  display: none;
+}
+
+section article.selected {
+  display: block;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+.content {
+  color: #eee;
+  padding: 20px;
+  font-family: raleway;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.content a:before {
+  content: '⫸ ';
+}
+
+.content a.selected:before {
+  color: #d50095;
+}
+
+.article {
+  background-color: rgba(1, 1, 1, 0.8);
+  color: #eee;
+}
+
+article {
+  padding: 20px 40px;
+  line-height: 1.5rem;
+  font-size: 1.1rem;
+  font-family: raleway;
+}
+
+a {
+  color: #eee;
+  display: block;
+  text-decoration: none;
+}
+
+video {
+  opacity: 0.5;
+}
+
+canvas {
+  position: fixed;
+  z-index: 1;
+}
