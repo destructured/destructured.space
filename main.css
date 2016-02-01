@@ -18,7 +18,7 @@ body {
 }
 
 section {
-  background-color: rgba(1, 1, 1, 0.55);
+  background-color: rgba(1, 1, 1, 0.45);
   width: 48%;
   margin-top: 5vh;
   position: absolute;
@@ -57,7 +57,7 @@ h1 {
   content: '⫸ ';
 }
 
-.content a.selected:before {
+.content a.selected:before, .content a:hover {
   color: #d50095;
 }
 
