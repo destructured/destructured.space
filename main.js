@@ -1,5 +1,3 @@
-// Borrowed and mangled from http://threejs.org/examples/#canvas_camera_orthographic
-
 (function () {
   var height = window.innerHeight;
   var width = window.innerWidth;
