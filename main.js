@@ -3,7 +3,7 @@
   var width = window.innerWidth;
 
   var container;
-  var camera, scene, renderer, composer;
+  var camera, scene, renderer;
 
   init();
   animate();
@@ -127,14 +127,6 @@
 
     var renderTarget = new THREE.WebGLRenderTarget(width, height, params);
 
-    composer = new THREE.EffectComposer(renderer, renderTarget);
-
-    composer.addPass(new THREE.RenderPass(scene, camera));
-
-    glitchPass = new THREE.GlitchPass();
-    glitchPass.renderToScreen = true;
-    composer.addPass(glitchPass);
-
     window.addEventListener('resize', onWindowResize, false);
   }
 
@@ -162,14 +154,15 @@
     camera.position.x = 0;
     camera.position.y = 500;
     camera.position.z = Math.cos(timer) * 1000;
-    composer.render();
+    renderer.render(scene, camera);
   }
 
-  var links = document.querySelectorAll('section a');
+  var links = document.querySelectorAll('section.menu a');
 
   function unlink() {
     for (var i = 0; i < links.length; i++) {
       links[i].classList.remove('selected');
+      console.log(links[i].getAttribute('data-id'))
       document.querySelector('#' + links[i].getAttribute('data-id')).classList.remove('selected');
     }
   }
